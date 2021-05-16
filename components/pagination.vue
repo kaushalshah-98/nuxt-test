@@ -22,22 +22,21 @@
             aria-label="Previous"
             @click="Previous"
           >
-            <ChevronLeftIcon size="2x" />
+            <ChevronLeftIcon />
           </button>
-          <div v-for="item in arrr" :key="item.name">
-            <a
-              :key="item"
-              :class="[
-                page == item
-                  ? 'bg-blue-500 text-white '
-                  : 'bg-white text-gray-700 hover:text-gray-500',
-                'cursor-pointer md:inline-flex relative items-center px-4 py-3 border border-gray-300 text-sm leading-5 font-medium focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150',
-              ]"
-              @click="changePage(item)"
-            >
-              {{ item }}
-            </a>
-          </div>
+          <a
+            v-for="item in arrr"
+            :key="item.name"
+            :class="[
+              page == item
+                ? 'bg-blue-500 text-white '
+                : 'bg-white text-gray-700 hover:text-gray-500',
+              'cursor-pointer md:inline-flex relative items-center px-4 py-3 border border-gray-300 text-sm leading-5 font-medium focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150',
+            ]"
+            @click="changePage(item)"
+          >
+            {{ item }}
+          </a>
           <button
             :class="[
               end >= totalpages ? 'cursor-not-allowed' : '',
@@ -46,7 +45,7 @@
             aria-label="Next"
             @click="Next"
           >
-            <ChevronRightIcon size="2x" />
+            <ChevronRightIcon />
           </button>
         </nav>
       </div>
