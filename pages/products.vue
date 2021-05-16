@@ -8,7 +8,7 @@
       />
     </div>
     <div v-if="loading"><Loader /></div>
-    <div v-if="products">
+    <div v-if="products && products.length > 0">
       <ProductList :products="productsToShow" />
       <div class="mt-4">
         <Pagination
