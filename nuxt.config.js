@@ -1,7 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'LimeLightCodingChallenge',
@@ -40,7 +39,17 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true,
+  },
+
+  proxy: {
+    '/api/': {
+      target: 'https://trayvonnorthern.com/Edgewood-API/public/api/',
+      pathRewrite: { '^/api/': '' },
+      changeOrigin: true,
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

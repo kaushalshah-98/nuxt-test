@@ -1,8 +1,17 @@
 <template>
   <div>
+    <AppHeader />
     <Nuxt />
   </div>
 </template>
+<script>
+import AppHeader from '../components/navigationBar'
+export default {
+  components: {
+    AppHeader,
+  },
+}
+</script>
 
 <style>
 html {
